@@ -21,7 +21,7 @@ class DefaultController extends AbstractController
 
         // now pass the array of link object to the view
         return $this->render('noticias/index.html.twig', [
-            'links' => $links,
+            'noticias' => $links,
         ]);
     }
 }
