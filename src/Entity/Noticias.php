@@ -17,11 +17,11 @@ class Noticias
     /**
      * @var int
      *
-     * @ORM\Column(name="id_news", type="integer", nullable=false)
+     * @ORM\Column(name="idnews", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idNews;
+    private $idnews;
 
     /**
      * @var int
