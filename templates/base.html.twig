@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets  %}{% include 'user/_style.html.twig' %}{% endblock %}
+    {% block stylesheets  %}{% include '_style.html.twig' %}{% endblock %}
 </head>
 <body>
 {% block header %}
-    {% include 'link/_header.html.twig' %}
+    {% include '_header.html.twig' %}
 {%  endblock %}
 {% block body %}{% endblock %}
 {% block javascripts %}{% endblock %}

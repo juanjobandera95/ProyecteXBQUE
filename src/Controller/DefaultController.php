@@ -17,11 +17,11 @@ class DefaultController extends AbstractController
         $repository = $this->getDoctrine()->getRepository(Noticias::class);
 
         // retrieve all links
-        $links = $repository->findAll();
+        $noticias = $repository->findAll();
 
         // now pass the array of link object to the view
         return $this->render('noticias/index.html.twig', [
-            'noticias' => $links,
+            'noticias' => $noticias,
         ]);
     }
 }
