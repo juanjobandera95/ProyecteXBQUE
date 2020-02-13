@@ -22,7 +22,7 @@
         <tbody>
         {% for noticia in noticias %}
             <tr>
-                <td>{{ noticia.idNews }}</td>
+                <td>{{ noticia.idnews }}</td>
                 <td>{{ noticia.authorId }}</td>
                 <td>{{ noticia.title }}</td>
                 <td>{{ noticia.datePublic ? noticia.datePublic|date('Y-m-d H:i:s') : '' }}</td>

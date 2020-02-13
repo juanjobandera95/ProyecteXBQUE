@@ -97,7 +97,7 @@ class Noticias
 
     public function getIdNews(): ?int
     {
-        return $this->idNews;
+        return $this->idnews;
     }
 
     public function getAuthorId(): ?int
