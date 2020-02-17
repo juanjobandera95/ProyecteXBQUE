@@ -4,7 +4,9 @@
 namespace App\Repository;
 
 
-class NoticiasRepository
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+
+class NoticiasRepository  extends ServiceEntityRepository
 {
 
 }
