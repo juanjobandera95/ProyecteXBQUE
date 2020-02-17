@@ -1,0 +1,13 @@
+<ul class="list-group">
+    {% for categorium in categorias %}
+        <li>
+            <li>{{ categorium.nomcategoria }}</li>
+            <ul>
+                <li><a href="{{ path('categoria_show', {'idCategoria': categorium.idCategoria}) }}">show</a></li>
+                <li><a href="{{ path('categoria_edit', {'idCategoria': categorium.idCategoria}) }}">edit</a></li>
+            </ul>
+        </li>
+
+    {% endfor %}
+
+</ul>

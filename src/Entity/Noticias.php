@@ -78,7 +78,7 @@ class Noticias
      * @ORM\ManyToMany(targetEntity="Categoria", inversedBy="noticia")
      * @ORM\JoinTable(name="noticia_categoria",
      *   joinColumns={
-     *     @ORM\JoinColumn(name="noticia_id", referencedColumnName="id_news")
+     *     @ORM\JoinColumn(name="noticia_id", referencedColumnName="idnews")
      *   },
      *   inverseJoinColumns={
      *     @ORM\JoinColumn(name="categoria_id", referencedColumnName="id_categoria")

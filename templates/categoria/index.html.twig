@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Categoria index{% endblock %}
 
 {% block body %}
     <h1>Categoria index</h1>
@@ -19,8 +18,8 @@
                 <td>{{ categorium.idCategoria }}</td>
                 <td>{{ categorium.nomcategoria }}</td>
                 <td>
-                    <a href="{{ path('categoria_show', {'idCategoria': categorium.idCategoria}) }}">show</a>
-                    <a href="{{ path('categoria_edit', {'idCategoria': categorium.idCategoria}) }}">edit</a>
+                    <li><a href="{{ path('categoria_show', {'idCategoria': categorium.idCategoria}) }}">show</a></li>
+                    <li><a href="{{ path('categoria_edit', {'idCategoria': categorium.idCategoria}) }}">edit</a></li>
                 </td>
             </tr>
         {% else %}

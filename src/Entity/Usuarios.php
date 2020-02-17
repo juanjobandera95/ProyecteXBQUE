@@ -68,7 +68,7 @@ class Usuarios
      *
      * @ORM\ManyToOne(targetEntity="Noticias")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Id_user", referencedColumnName="author_id")
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="author_id")
      * })
      */
     private $idUser2;
@@ -150,17 +150,6 @@ class Usuarios
         return $this;
     }
 
-    public function getIdUser2(): ?Noticias
-    {
-        return $this->idUser2;
-    }
-
-    public function setIdUser2(?Noticias $idUser2): self
-    {
-        $this->idUser2 = $idUser2;
-
-        return $this;
-    }
 
 
 }

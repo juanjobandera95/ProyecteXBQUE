@@ -1,0 +1,14 @@
+<ul class="list-group">
+    {% for comentario in comentarios %}
+        <ul>
+            <li>{{ comentario.content|nl2br }}</li>
+            <li>{{ comentario.datePublic ? comentario.datePublic|date('Y-m-d H:i:s') : '' }}</li>
+            <ul>
+                <li><a href="{{ path('comentario_show',{'idComentario': comentario.idComentario})}}">show</a></li>
+                <li><a href="{{ path('comentario_edit',{'idComentario': comentario.idComentario})}}">edit</a></li>
+            </ul>
+        </ul>
+    {% endfor %}
+
+</ul>
+

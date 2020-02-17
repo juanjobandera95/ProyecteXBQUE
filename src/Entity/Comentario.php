@@ -40,7 +40,7 @@ class Comentario
      * @ORM\GeneratedValue(strategy="NONE")
      * @ORM\OneToOne(targetEntity="Noticias")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_comentario", referencedColumnName="id_news")
+     *   @ORM\JoinColumn(name="idComentario", referencedColumnName="idnews")
      * })
      */
     private $idComentario;
@@ -50,7 +50,7 @@ class Comentario
      *
      * @ORM\ManyToOne(targetEntity="Usuarios")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="author_id", referencedColumnName="Id_user")
+     *   @ORM\JoinColumn(name="author_id", referencedColumnName="id_user")
      * })
      */
     private $author;

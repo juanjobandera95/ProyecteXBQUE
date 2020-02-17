@@ -1,47 +1,32 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Noticias index{% endblock %}
-
 {% block body %}
-    <h1>Noticias index</h1>
+    {% block aside %}
+        {% include '__categorias.html.twig' %}
+    {% endblock %}
+    {% for noticia in noticias %}
+        <div class="container">
+        <div class="row">
+        <div class="col-form-label">
+        <div id="col-red">
+            <div><h1>{{ noticia.title }}</h1></div>
+            <div><small>{{ noticia.datePublic ? noticia.datePublic|date('Y-m-d H:i:s') : '' }}</small></div>
+            <div><span>{{ noticia.summary }}</span></div>
+            <div><strong>Escrito por:</strong> <span>{{ noticia.user }}</span></div>
+            <div>
+                <ion-icon name="paper-plane-outline"><strong><a
+                                href="{{ path('noticias_show', {'idNews': noticia.idNews}) }}">Ver
+                            contenido</a></strong></ion-icon>
+            </div>
+            <ion-icon name="create-outline"><span><a href="{{ path('noticias_edit', {'idNews': noticia.idNews}) }}">editar</a></span>
+            </ion-icon>
+        </div>
+    {% endfor %}
+    </div>
+    </div>
+    </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>IdNews</th>
-                <th>AuthorId</th>
-                <th>Title</th>
-                <th>DatePublic</th>
-                <th>Content</th>
-                <th>Summary</th>
-                <th>Comentarios</th>
-                <th>User</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for noticia in noticias %}
-            <tr>
-                <td>{{ noticia.idnews }}</td>
-                <td>{{ noticia.authorId }}</td>
-                <td>{{ noticia.title }}</td>
-                <td>{{ noticia.datePublic ? noticia.datePublic|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ noticia.content }}</td>
-                <td>{{ noticia.summary }}</td>
-                <td>{{ noticia.comentarios }}</td>
-                <td>{{ noticia.user }}</td>
-                <td>
-                    <a href="{{ path('noticias_show', {'idNews': noticia.idNews}) }}">show</a>
-                    <a href="{{ path('noticias_edit', {'idNews': noticia.idNews}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('noticias_new') }}">Create new</a>
+    <a href="{{ path('noticias_new') }}">Subir noticia</a>
 {% endblock %}
+{% block footer %}
+{% include '__comentatios.html.twig' %}
+{% endblock  %}
