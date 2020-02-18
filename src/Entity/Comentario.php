@@ -50,7 +50,7 @@ class Comentario
      *
      * @ORM\ManyToOne(targetEntity="Usuarios")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="author_id", referencedColumnName="id_user")
+     *   @ORM\JoinColumn(name="author_id", referencedColumnName="iduser")
      * })
      */
     private $author;

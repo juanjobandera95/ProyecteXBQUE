@@ -15,7 +15,7 @@ class Usuarios
     /**
      * @var int
      *
-     * @ORM\Column(name="id_user", type="integer", nullable=false)
+     * @ORM\Column(name="iduser", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */

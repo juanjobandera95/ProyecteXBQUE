@@ -66,7 +66,7 @@ class NoticiasController extends AbstractController
     }
 
     /**
-     * @Route("/{idNews}", name="noticias_show", methods={"GET"})
+     * @Route("/{idnews}", name="noticias_show", methods={"GET"})
      */
     public function show(Noticias $noticia): Response
     {
