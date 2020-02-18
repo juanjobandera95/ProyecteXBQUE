@@ -3,11 +3,26 @@
 {% block title %}Edit Noticias{% endblock %}
 
 {% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+
+
+            <div class="col-sm-10">
     <h1>Edit Noticias</h1>
 
-    {{ include('noticias/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('noticias/_form.html.twig', {'button_label': 'Update'}) }}<br/>
+                {{ include('noticias/_delete_form.html.twig') }}
 
-    <a href="{{ path('noticias_index') }}">back to list</a>
 
-    {{ include('noticias/_delete_form.html.twig') }}
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr>
+    <br>
+    <a href="{{ path('noticias_index') }}">Pagina Principal</a>
+
 {% endblock %}

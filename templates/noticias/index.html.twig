@@ -1,12 +1,14 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    {% block aside %}
-        {% include '__categorias.html.twig' %}
-    {% endblock %}
+    <br>
+
+
+    <br>
+    {% block section %}
     {% for noticia in noticias %}
         <div class="container">
         <div class="row">
-        <div class="col-form-label">
+        <div class="col-8">
         <div id="col-red">
             <div><h1>{{ noticia.title }}</h1></div>
             <div><small>{{ noticia.datePublic ? noticia.datePublic|date('Y-m-d H:i:s') : '' }}</small></div>
@@ -14,19 +16,23 @@
             <div><strong>Escrito por:</strong> <span>{{ noticia.user }}</span></div>
             <div>
                 <ion-icon name="paper-plane-outline"><strong><a
-                                href="{{ path('noticias_show', {'idNews': noticia.idNews}) }}">Ver
+                                href="{{ path('noticias_show', {'idnews': noticia.idnews}) }}">Ver
                             contenido</a></strong></ion-icon>
             </div>
-            <ion-icon name="create-outline"><span><a href="{{ path('noticias_edit', {'idNews': noticia.idNews}) }}">editar</a></span>
+            <ion-icon name="create-outline"><span><a href="{{ path('noticias_edit', {'idnews': noticia.idnews}) }}">editar</a></span>
             </ion-icon>
+            <hr>
         </div>
     {% endfor %}
+        {% endblock section %}
     </div>
     </div>
     </div>
 
     <a href="{{ path('noticias_new') }}">Subir noticia</a>
+    {% block footer %}
+        {% include '__comentarios.html.twig' %}
+    {% endblock  %}
+
 {% endblock %}
-{% block footer %}
-{% include '__comentatios.html.twig' %}
-{% endblock  %}
+

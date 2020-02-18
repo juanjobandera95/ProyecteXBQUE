@@ -5,24 +5,11 @@
 {% block body %}
     <h1>Comentario</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>NewId</th>
-                <td>{{ comentario.newId }}</td>
-            </tr>
-            <tr>
-                <th>Content</th>
-                <td>{{ comentario.content }}</td>
-            </tr>
-            <tr>
-                <th>DatePublic</th>
-                <td>{{ comentario.datePublic ? comentario.datePublic|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+                <p>{{ comentario.content }}</p>
+                <p>{{ comentario.datePublic ? comentario.datePublic|date('Y-m-d H:i:s') : '' }}</p>
 
-    <a href="{{ path('comentario_index') }}">back to list</a>
+
+    <a href="{{ path('comentario_index') }}"> Pagina Principal </a>
 
     <a href="{{ path('comentario_edit', {'idComentario': comentario.idComentario}) }}">edit</a>
 

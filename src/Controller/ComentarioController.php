@@ -50,12 +50,12 @@ class ComentarioController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-
     /**
      * @Route("/{idComentario}", name="comentario_show", methods={"GET"})
      */
     public function show(Comentario $comentario): Response
     {
+
         return $this->render('comentario/show.html.twig', [
             'comentario' => $comentario,
         ]);
