@@ -5,11 +5,12 @@
 
 
             <div class="col-sm-10">
-<form method="post" action="{{ path('noticias_delete', {'idNews': noticia.idNews}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+<form method="post" action="{{ path('noticias_delete', {'idnews': noticia.idnews}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
     <input type="hidden" name="_method" value="DELETE">
-    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ noticia.idNews) }}">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ noticia.idnews) }}">
     <button class="btn">Delete</button>
 </form>
             </div>
         </div>
     </div>
+</div>

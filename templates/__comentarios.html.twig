@@ -1,8 +1,7 @@
 <ul class="list-group">
     {% for comentario in comentarios %}
-    <p>{ comentario.content|nl2br }}</p>
+        <td>{{ comentario.content}}</td>
     <p>{{ comentario.datePublic ? comentario.datePublic|date('Y-m-d H:i:s') : '' }}</p>
-
                 <a href="{{ path('comentario_show',{'idComentario': comentario.idComentario})}}">show</a>
                <a href="{{ path('comentario_edit',{'idComentario': comentario.idComentario})}}">edit</a>
 

@@ -98,7 +98,7 @@ class NoticiasController extends AbstractController
     }
 
     /**
-     * @Route("/{idNews}", name="noticias_delete", methods={"DELETE"})
+     * @Route("/{idnews}", name="noticias_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Noticias $noticia): Response
     {
@@ -107,7 +107,6 @@ class NoticiasController extends AbstractController
             $entityManager->remove($noticia);
             $entityManager->flush();
         }
-
         return $this->redirectToRoute('noticias_index');
     }
 }
