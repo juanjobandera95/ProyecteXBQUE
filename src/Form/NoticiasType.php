@@ -12,13 +12,10 @@ class NoticiasType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('authorId')
             ->add('title')
             ->add('datePublic')
-            ->add('content')
+            ->add('content',)
             ->add('summary')
-            ->add('comentarios')
-            ->add('user')
             ->add('categoria')
         ;
     }
