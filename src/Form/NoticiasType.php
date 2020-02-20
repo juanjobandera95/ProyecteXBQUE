@@ -2,8 +2,13 @@
 
 namespace App\Form;
 
+use App\Entity\Categoria;
 use App\Entity\Noticias;
+use App\Entity\Usuarios;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,11 +18,12 @@ class NoticiasType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('datePublic')
-            ->add('content',)
-            ->add('summary')
-            ->add('categoria')
-        ;
+            ->add('datePublic',DateTimeType::class)
+            ->add('content',TextareaType::class)
+            ->add('summary',TextareaType::class)
+            ->add('categoria',EntityType::class,['class'=>Categoria::class,'choice_label'=>'nomCategoria'])
+            ->add('user',EntityType::class, ['class' => Usuarios::class, 'choice_label' => 'fullname']);
+
     }
 
     public function configureOptions(OptionsResolver $resolver)
