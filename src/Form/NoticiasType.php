@@ -21,8 +21,7 @@ class NoticiasType extends AbstractType
             ->add('datePublic',DateTimeType::class)
             ->add('content',TextareaType::class)
             ->add('summary',TextareaType::class)
-            ->add('categoria',EntityType::class,['class'=>Categoria::class,'choice_label'=>'nomCategoria'])
-            ->add('user',EntityType::class, ['class' => Usuarios::class, 'choice_label' => 'fullname']);
+            ->add('categoria',EntityType::class,['class'=>Categoria::class,'choice_label'=>'nomCategoria','multiple' =>true]);
 
     }
 

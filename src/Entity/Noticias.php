@@ -58,19 +58,7 @@ class Noticias
      */
     private $summary;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="comentarios", type="text", length=0, nullable=false)
-     */
-    private $comentarios;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="user", type="string", length=255, nullable=false)
-     */
-    private $user;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -160,29 +148,7 @@ class Noticias
         return $this;
     }
 
-    public function getComentarios(): ?string
-    {
-        return $this->comentarios;
-    }
 
-    public function setComentarios(string $comentarios): self
-    {
-        $this->comentarios = $comentarios;
-
-        return $this;
-    }
-
-    public function getUser(): ?string
-    {
-        return $this->user;
-    }
-
-    public function setUser(string $user): self
-    {
-        $this->user = $user;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Categoria[]

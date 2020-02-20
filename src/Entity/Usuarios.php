@@ -68,7 +68,7 @@ class Usuarios
      *
      * @ORM\ManyToOne(targetEntity="Noticias")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_user", referencedColumnName="author_id")
+     *   @ORM\JoinColumn(name="iduser", referencedColumnName="author_id")
      * })
      */
     private $idUser2;
