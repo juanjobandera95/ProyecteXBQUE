@@ -1,15 +1,16 @@
 security:
-    encoders:
-        App\Entity\User:
-            algorithm: auto
-
-    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        # used to reload user from session & other features (e.g. switch_user)
-        app_user_provider:
+        in_memory: { memory: null }
+        users:
             entity:
-                class: App\Entity\User
-                property: full_name
+                # the class of the entity that represents users
+                class: 'App\Entity\Usuarios'
+                # the property to query by - e.g. username, email, etc
+                property: 'full_name'
+                # optional: if you're using multiple Doctrine entity
+                # managers, this option defines which one to use
+                # manager_name: 'customer'
+
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -17,14 +18,32 @@ security:
         main:
             anonymous: lazy
 
+            form_login:
+                provider: users
+                login_path: login
+                check_path: login
+            logout:
+                path: logout
+                # where to redirect after logout
+                # target: app_any_route
+
+    access_control:
+        # require ROLE_ADMIN for /admin*
+        - { path: '^/admin', roles: ROLE_ADMIN }
+
+        # the 'path' value can be any valid regular expression
+        # (this one will match URLs like /api/post/7298 and /api/comment/528491)
+        - { path: ^/api/(noticias|comentario)/\d+$, roles: ROLE_USER }
+
+
+    encoders:
+        # use your user class name here
+        App\Entity\Usuarios:
+            # Use native password encoder
+            # This value auto-selects the best possible hashing algorithm
+            # (i.e. Sodium when available).
+            algorithm: auto
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
-
             # https://symfony.com/doc/current/security/impersonating_user.html
             # switch_user: true
-
-    # Easy way to control access for large sections of your site
-    # Note: Only the *first* access control that matches will be used
-    access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }

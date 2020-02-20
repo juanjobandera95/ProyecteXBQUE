@@ -12,7 +12,7 @@
             <div><h1>{{ noticia.title }}</h1></div>
             <div><small>{{ noticia.datePublic ? noticia.datePublic|date('Y-m-d H:i:s') : '' }}</small></div>
             <div><span>{{ noticia.summary }}</span></div>
-            <div><strong>Escrito por:</strong> <span>{{ noticia.user }}</span></div>
+            <div><strong>Escrito por:</strong> <span>{{ noticia.authorId }}</span></div>
             <div>
                 <ion-icon name="paper-plane-outline"><strong><a
                                 href="{{ path('noticias_show', {'idnews': noticia.idnews}) }}">Ver
