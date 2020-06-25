@@ -1,23 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Xabia Que Bonica Eres{% endblock %}</title>
-    {% block stylesheets  %}{% include '_style.html.twig' %}{% endblock %}
-</head>
-<body>
-{% block header %}
-    {% include '_header.html.twig' %}
-{%  endblock %}
-
-{% block body %}
-{% endblock %}
-{% block javascripts %}{% endblock %}
-<hr style="background-color: #005cbf">
-<div class="clearfix"></div>
-
-
-
-
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
 </html>
